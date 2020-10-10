@@ -1,0 +1,33 @@
+#include <iostream>;
+using namespace std;
+
+int main()
+{
+	setlocale(0, "");
+	int i, j, N;
+	bool temp;
+
+	cout << "Введите границу: ";
+	cin >> N;
+
+	bool* mas = new bool[N];
+
+
+
+	for (i = 0; i < N; i++)
+		mas[i] = true;
+	for (i = 2; i < N; i++)
+		for (j = 2; j < i; j++)
+			if (i % j == 0)
+				mas[i] = false;
+
+
+
+	for (i = 2; i < N; i++)
+		if (mas[i] == true)
+			cout << i << endl;
+
+
+
+	return 0;
+}
